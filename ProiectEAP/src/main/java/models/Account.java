@@ -1,5 +1,6 @@
 package models;
 
+//class for bank accounts
 public class Account {
     //declare the entries of the Account table
     private String idaccount;

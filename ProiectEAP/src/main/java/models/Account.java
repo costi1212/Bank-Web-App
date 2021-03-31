@@ -1,13 +1,14 @@
 package models;
 
 public class Account {
-
+    //declare the entries of the Account table
     private String idaccount;
     private String idUser;
     private String amount;
     private String valuta;
     private String nrCard;
 
+    //constructor with all entries
     public Account(String idaccount, String idUser, String amount, String valuta, String nrCard) {
         this.idaccount = idaccount;
         this.idUser = idUser;
@@ -15,14 +16,14 @@ public class Account {
         this.valuta = valuta;
         this.nrCard = nrCard;
     }
-
+    //ocnstructor with all entries but the idUser
     public Account(String idaccount, String amount, String valuta, String nrCard) {
         this.idaccount = idaccount;
         this.amount = amount;
         this.valuta = valuta;
         this.nrCard = nrCard;
     }
-
+    //method that converts currencies to RON, incase the user needs to see the account balance in RON
     public int ConversieLaRon(){
         int valuta_finala=Integer.parseInt(this.amount);
         if(this.valuta.equals("Euro")){
@@ -42,6 +43,7 @@ public class Account {
         return valuta_finala ;
 
     }
+    //method that adds money to an account
     public String adaugare_suma(String s)
     {
         int temp=Integer.parseInt(this.amount);
@@ -50,6 +52,7 @@ public class Account {
         this.setAmount(Integer.toString(temp));
         return this.getAmount();
     }
+    //method that extracts a sum from an account and prints a messasge if the sum in greater than the actual amount in the account
     public String extragere_suma(String s)
     {
         int temp=Integer.parseInt(this.amount);
@@ -64,7 +67,7 @@ public class Account {
         this.setAmount(Integer.toString(temp));
         return this.getAmount();}
     }
-
+    //setters and getters for every entry of the table
     public String getIdaccount() {
         return idaccount;
     }

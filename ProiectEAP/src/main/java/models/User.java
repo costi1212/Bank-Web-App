@@ -1,7 +1,7 @@
 package models;
-
+//this class was created so that we can keep track of the users that can make requests on the database, to do so, they have to register and login using Name_login and Password
 public class User {
-
+    //table entries
     private String idUser;
     private String Nume_login;
     private String Password;

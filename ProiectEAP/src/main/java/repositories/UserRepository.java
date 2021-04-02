@@ -7,11 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+//class with sql commands for users
 public class UserRepository {
 
 
-
+    //get userid using Username from database
     public static String getUserByUsername(String Username) throws SQLException {
         Statement statement = DbConnection.getConnection().createStatement();
         String sql = "SELECT * FROM user WHERE Nume_login like '" + Username + "'";
@@ -24,7 +24,7 @@ public class UserRepository {
         return null;
     }
 
-
+    //register function
     public static void registerUser(User user) throws SQLException {
         String sql = "INSERT INTO user(nume_login, password) VALUES(?, ?)";
         PreparedStatement preparedStatement = DbConnection.getConnection().prepareStatement(sql);
@@ -34,7 +34,7 @@ public class UserRepository {
         preparedStatement.execute();
     }
 
-
+    //return user entries using login name
     public static User findByNume_login(String  Nume_login) throws SQLException {
 
             Statement statement = DbConnection.getConnection().createStatement();
@@ -53,7 +53,7 @@ public class UserRepository {
                 return null;
         }
 
-
+    //login function
     public static User userLogin(String userName, String userPassword) throws SQLException {
 
         Statement statement = DbConnection.getConnection().createStatement();
